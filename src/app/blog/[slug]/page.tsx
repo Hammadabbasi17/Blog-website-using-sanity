@@ -15,7 +15,7 @@ interface BlogDetailPageProps{
 }
 
 export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
-  const { slug } = await params;
+  const { slug } =  params;
 
   const data: BlogDetail | null = await client.fetch(
     `*[_type == "herosection" && slug.current == $slug][0]{
