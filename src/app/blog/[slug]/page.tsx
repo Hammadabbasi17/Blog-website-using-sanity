@@ -10,11 +10,11 @@ interface BlogDetail {
   paragraph: any;
 }
 
-interface Params {
+interface BlogDetailPageProps{
   params: { slug: string };
 }
 
-export default async function BlogDetailPage({ params }: Params) {
+export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
   const { slug } = await params;
 
   const data: BlogDetail | null = await client.fetch(
