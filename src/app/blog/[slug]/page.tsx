@@ -11,8 +11,7 @@ interface BlogDetail {
 }
 
 interface BlogDetailPageProps {
-  params: { slug: any };
-
+  params: { slug: string };
 }
 
 export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
