@@ -10,13 +10,13 @@ interface BlogDetail {
   paragraph: any;
 }
 
-interface BlogDetailPageProps{
-  params: { slug: string };
-  
+interface BlogDetailPageProps {
+  params: { slug: any };
+
 }
 
 export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
-  const { slug } =  params;
+  const { slug } = params;
 
   const data: BlogDetail | null = await client.fetch(
     `*[_type == "herosection" && slug.current == $slug][0]{
@@ -36,7 +36,7 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
       <div className="w-full h-28  mt-28 flex justify-center items-center">
         <div className="w-[80%] h-auto ">
           <Link href={"/blog"}>
-            <h3 className=" text-xl flex items-center"><GoChevronLeft className="text-xl"/>Back</h3>
+            <h3 className=" text-xl flex items-center"><GoChevronLeft className="text-xl" />Back</h3>
 
           </Link>
 
