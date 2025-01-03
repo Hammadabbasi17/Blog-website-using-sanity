@@ -9,7 +9,10 @@ const nextConfig = {
             }
         ]
     },
- 
+    output: "standalone", // Optional but ensures compatibility with Vercel
+    experimental: {
+    appDir: true, // Ensure app directory is enabled
+  },
 };
 
 export default nextConfig;
