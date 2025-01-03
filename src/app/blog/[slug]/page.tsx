@@ -15,8 +15,8 @@ interface Params {
    slug: string ;
 }
 
- const  BlogPage= async ({ params }: { params: Params }) => {
-  const  slug  = (await params).slug;
+ const  BlogPage = async ({ params }: { params: Params }) => {
+  const { slug } =  params;
   console.log("slug",slug);
   
 
