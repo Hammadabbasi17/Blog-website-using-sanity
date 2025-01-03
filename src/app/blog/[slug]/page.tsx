@@ -3,6 +3,7 @@ import { client } from "@/sanity/lib/client";
 import { PortableText } from "next-sanity";
 import Image from "next/image";
 import Link from "next/link";
+import { FC } from "react";
 
 interface BlogDetail {
   imageUrl?: string;
@@ -10,12 +11,14 @@ interface BlogDetail {
   paragraph: any;
 }
 
-interface BlogDetailPageProps {
-  params: { slug: string };
+interface Params {
+   slug: string ;
 }
 
-export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
-  const { slug } = params;
+ const  BlogPage= async ({ params }: { params: Params }) => {
+  const  slug  = (await params).slug;
+  console.log("slug",slug);
+  
 
   const data: BlogDetail | null = await client.fetch(
     `*[_type == "herosection" && slug.current == $slug][0]{
@@ -61,3 +64,4 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
     </div>
   );
 }
+export default BlogPage
