@@ -14,8 +14,11 @@ interface BlogDetail {
 interface Params {
    slug: string ;
 }
+interface BlogPageProps {
+  params: Params;
+}
 
- const  BlogPage = async ({ params }: { params: Params }) => {
+ const  BlogPage = async ({ params }: BlogPageProps) => {
   const { slug } =  params;
   console.log("slug",slug);
   
