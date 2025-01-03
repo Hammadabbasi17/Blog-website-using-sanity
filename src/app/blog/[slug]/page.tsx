@@ -13,12 +13,16 @@ interface BlogDetail {
 }
 
 interface Params {
+  params:Promise<{
     slug: string ;
+
+  }>
+    
 }
 
 
- const  BlogPage = async ( params : Promise<{ params: Params }>) => {
-  const {slug}  =  (await params).params;
+ const  BlogPage = async ( params : Params) => {
+  const {slug}  =  await params.params;
  console.log("hammad",slug);
  
   
